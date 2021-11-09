@@ -227,3 +227,5 @@ venv.bak/
 
 .gitignore~
 
+# opencv build folder
+opencv/*

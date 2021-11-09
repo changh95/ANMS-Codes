@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
 
   string testImgPath = "../../../Images/test.png"; // Path to image
   cv::Mat testImg =
-      cv::imread(testImgPath, CV_LOAD_IMAGE_GRAYSCALE); // Read the file
+      cv::imread(testImgPath, cv::IMREAD_GRAYSCALE); // Read the file
 
   cv::namedWindow("Input Image", cv::WINDOW_AUTOSIZE);
   cv::imshow("Input Image", testImg);
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     responseVector.push_back(keyPoints[i].response);
   vector<int> Indx(responseVector.size());
   std::iota(std::begin(Indx), std::end(Indx), 0);
-  cv::sortIdx(responseVector, Indx, CV_SORT_DESCENDING);
+  cv::sortIdx(responseVector, Indx, cv::SORT_DESCENDING);
   vector<cv::KeyPoint> keyPointsSorted;
   for (unsigned int i = 0; i < keyPoints.size(); i++)
     keyPointsSorted.push_back(keyPoints[Indx[i]]);
